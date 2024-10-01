@@ -9,7 +9,15 @@ terraform {
   #   }
   # }
 
+    backend "s3" {
+      
+      bucket = "terraformstatehomeserver020923"
+      key = "terraform/simple-eks-cluster/state"
+      region = "af-south-1"
+    }
+
   required_providers {
+
     aws = {
       source  = "hashicorp/aws"
       version = "~> 5.47.0"
